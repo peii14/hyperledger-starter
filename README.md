@@ -6,7 +6,11 @@ Our Hyperledger Fabric network is composed of four organizations: Org1, Org2, Or
 
 The network includes an orderer node housed within a Docker container, responsible for managing the order of transactions. The chaincode, which manages the KYC process, is also deployed as a Docker container. CouchDB is used as the state database for each peer, providing flexible querying. Each organization maintains a unique communication channel within the Docker environment, enhancing the security and privacy of peer interactions.
 
-![Infra Screenshots](image URL)
+![image URL](https://github.com/peii14/hyperledger-starter/blob/main/img/infra.png)
+
+## Imoprtant Notes
+* The bash file is still hardcoded to only have 4 org and 1 peer each
+* It has a predefine private data colection
 
 ## Installation and Setup
 
@@ -15,8 +19,6 @@ The network includes an orderer node housed within a Docker container, responsib
 ````bash
 
 ./install-fabric.sh
-
-    ```
 ````
 
 2. **Initiate the network**: Run the following script to setup the network:
@@ -25,7 +27,10 @@ The network includes an orderer node housed within a Docker container, responsib
 ./setUp.sh  # This script will create the network and deploy the chaincode
 ```
 
-![Screenshot of 2 organization with 1 peer docker containers](image URL)
+> What will you get is 2 oraganization with one peer each.
+
+![image URL](https://github.com/peii14/hyperledger-starter/blob/main/img/docker-org1andorg2.png)
+
 
 ## Adding New Organizations
 
@@ -36,6 +41,9 @@ To add Org3 or Org4, follow these steps:
 ```bash
 cd ./test-network/addOrg3
 ```
+> What will you get 
+
+![image URL](https://github.com/peii14/hyperledger-starter/blob/main/img/docker-org3.png)
 
 4. **_Generate a new CA container for Org3_**:
 
@@ -48,3 +56,22 @@ cd ./test-network/addOrg3
 ```bash
 ./addOrg3.sh -c mychannel -s couchdb
 ```
+To add repeat the process to add org3 but in org4 folder
+
+## Check
+
+As a default, a root account has been creted with 
+
+```
+username: admin
+password: adminpw
+```
+
+> Then connect to couchdb0
+
+![image URL](https://github.com/peii14/hyperledger-starter/blob/main/img/couchdb.png)
+
+
+
+
+
