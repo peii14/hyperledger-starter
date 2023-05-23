@@ -9,12 +9,12 @@ module.exports = {
     },
     parserOptions: {
         ecmaVersion: 2018,
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
             jsx: true,
         }
     },
-    extends: "eslint:recommended",
+    extends: 'eslint:recommended',
     rules: {
         indent: ['error', 4],
         'linebreak-style': ['error', 'unix'],
@@ -36,6 +36,6 @@ module.exports = {
         'operator-linebreak': 'error',
         yoda: 'error',
         'quote-props': ['error', 'as-needed'],
-        'no-constant-condition': ["error", { "checkLoops": false }]
+        'no-constant-condition': ['error', { checkLoops: false }]
     }
 };
